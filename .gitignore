@@ -36,6 +36,21 @@ backup.py
 
 #generated output
 *_pycache__/
-audio_output/
-akadverse_audio.db
 
+#Python environments and cache
+
+pycache/
+*.py[cod]
+*$py.class
+venv/
+env/
+.venv/
+
+
+#Application Specific Database and Outputs
+
+#DO NOT COMMIT user audio files or local databases
+akadverse_audio.db
+audio_output/
+.pdf
+temp_.pdf
