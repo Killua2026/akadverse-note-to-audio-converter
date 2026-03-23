@@ -1,0 +1,7 @@
+edge-tts
+fastapi
+uvicorn
+pydantic
+google-genai>=1.67.0
+python-dotenv
+pypdf

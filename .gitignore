@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build output
+dist/
+build/
+*.log
+
+# Audio files (for your converter)
+*.mp3
+*.wav
+*.flac
+*.aac
+output/
+
+#my personal files
+backup.py
+
+#generated output
+*_pycache__/
+audio_output/
+akadverse_audio.db
+
