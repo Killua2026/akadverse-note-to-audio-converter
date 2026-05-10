@@ -1,6 +1,6 @@
 """
 AkadVerse - Note-to-Audio Converter
-Tier 5 | Microservice Port: 8011
+Tier 5 | Microservice Port: 8014
 ========================================================================
 v1.0 - Initial build - used Google Cloud TTS synthesis in stage 2, which was simple but incurred costs and required API keys.
 
@@ -48,7 +48,7 @@ Architecture notes:
   - We use asyncio.to_thread() for synchronous Gemini API calls to
     prevent blocking the FastAPI event loop during heavy OCR tasks.
   - Job states: pending -> processing -> completed / failed
-  - Port: 8011
+  - Port: 8014
 
 Endpoints:
   POST /convert              - Submit text for audio conversion
@@ -86,7 +86,7 @@ Architecture notes:
   - Uses `tempfile` to securely handle the Gemini File API requirements.
   - Background tasks ensure the API remains non-blocking during heavy OCR.
   - Job states: pending -> processing -> completed / failed
-  - Port: 8011
+  - Port: 8014
 
 v3.1 - PDF Title Resolution Refinement
 
@@ -573,7 +573,7 @@ async def lifespan(_: "FastAPI") -> AsyncIterator[None]:
     print("[Startup] AkadVerse Note-to-Audio Converter initialising...")
     os.makedirs(AUDIO_OUTPUT_DIR, exist_ok=True)
     init_db()
-    print("[Startup] Ready. Run with: uvicorn note_to_audio_converter:app --host 127.0.0.1 --port 8011 --reload")
+    print("[Startup] Ready. Run with: uvicorn note_to_audio_converter:app --host 127.0.0.1 --port 8014 --reload")
     yield
     print("[Shutdown] AkadVerse Note-to-Audio Converter stopped.")
 

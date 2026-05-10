@@ -1,5 +1,5 @@
 # AkadVerse: Note-to-Audio Converter
-### Tier 5 Learning AI Tool | Microservice Port: `8011`
+### Tier 5 Learning AI Tool | Microservice Port: `8014`
 
 > An intelligent accessibility and study tool. Converts lecture notes,
 > summaries, and PDF documents into natural-sounding MP3 audio files using
@@ -216,7 +216,7 @@ Full dependency reference:
 From inside your project folder with the virtual environment activated:
 
 ```bash
-uvicorn note_to_audio_converter:app --host 127.0.0.1 --port 8011 --reload
+uvicorn note_to_audio_converter:app --host 127.0.0.1 --port 8014 --reload
 ```
 
 **Expected startup output:**
@@ -225,9 +225,9 @@ uvicorn note_to_audio_converter:app --host 127.0.0.1 --port 8011 --reload
 [Startup] AkadVerse Note-to-Audio Converter initialising...
 [DB] Audio jobs database initialised successfully.
 [Startup] TTS Engine: edge-tts (Open Source Azure Neural).
-[Startup] Ready. Run with: uvicorn note_to_audio_converter:app --host 127.0.0.1 --port 8011 --reload
+[Startup] Ready. Run with: uvicorn note_to_audio_converter:app --host 127.0.0.1 --port 8014 --reload
 INFO:     Application startup complete.
-INFO:     Uvicorn running on http://127.0.0.1:8011 (Press CTRL+C to quit)
+INFO:     Uvicorn running on http://127.0.0.1:8014 (Press CTRL+C to quit)
 ```
 
 Two items are created automatically on first startup:
@@ -338,7 +338,7 @@ same two-stage pipeline as `/convert`.
 **How to download the audio:** Open this URL directly in your browser:
 
 ```
-http://127.0.0.1:8011/audio/YOUR_JOB_ID
+http://127.0.0.1:8014/audio/YOUR_JOB_ID
 ```
 
 Your browser will play or download the MP3 immediately.
@@ -411,7 +411,7 @@ language codes, and gender.
 With the server running, open:
 
 ```
-http://127.0.0.1:8011/docs
+http://127.0.0.1:8014/docs
 ```
 
 ---
@@ -489,7 +489,7 @@ Once a job from Test 3 or Test 4 shows `state: completed` in `/jobs`,
 open this URL in your browser:
 
 ```
-http://127.0.0.1:8011/audio/YOUR_JOB_ID
+http://127.0.0.1:8014/audio/YOUR_JOB_ID
 ```
 
 ---
@@ -634,7 +634,7 @@ state with the error message stored once the exception is caught.
 
 **`Address already in use` on startup**
 
-Port 8011 is occupied. Run on a different port:
+Port 8014 is occupied. Run on a different port:
 
 ```bash
 uvicorn note_to_audio_converter:app --host 127.0.0.1 --port 8012 --reload
